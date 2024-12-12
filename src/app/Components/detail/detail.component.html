@@ -1,0 +1,51 @@
+<div class="bg-light min-vh-100 d-flex align-items-center">
+    <div class="container p-4 bg-white rounded shadow">
+      <div class="row">
+        <div class="col-12 col-md-4">
+          <!-- Imagen del personaje -->
+          <img [src]="personaje?.image" class="img-fluid rounded shadow" [alt]="personaje?.name" />
+        </div>
+        <div class="col-12 col-md-8">
+          <!-- Detalles del personaje -->
+          <h1 class="mb-3">{{ personaje?.name }}</h1>
+          <ul class="list-group">
+            <li class="list-group-item">
+              <strong>ID:</strong> {{ personaje?.id }}
+            </li>
+            <li class="list-group-item">
+              <strong>Status:</strong> {{ personaje?.status }}
+            </li>
+            <li class="list-group-item">
+              <strong>Species:</strong> {{ personaje?.species }}
+            </li>
+            <li class="list-group-item">
+              <strong>Type:</strong> {{ personaje?.type || 'Unknown' }}
+            </li>
+            <li class="list-group-item">
+              <strong>Gender:</strong> {{ personaje?.gender }}
+            </li>
+            <li class="list-group-item">
+              <strong>Origin:</strong> {{ personaje?.origin?.name }}
+            </li>
+            <li class="list-group-item">
+              <strong>Location:</strong> {{ personaje?.location?.name }}
+            </li>
+            <li class="list-group-item">
+              <strong>Created:</strong> {{ personaje?.created | date: 'long' }}
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col-12">
+          <h3>Episodes</h3>
+          <ul class="list-group">
+            <li class="list-group-item" *ngFor="let episode of personaje?.episode">
+              <a [href]="episode" target="_blank">{{ episode }}</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  

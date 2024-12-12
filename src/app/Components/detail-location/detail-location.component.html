@@ -1,0 +1,23 @@
+<div class="container my-5">
+    <div class="card mx-auto shadow-lg" style="max-width: 600px;">
+      <div class="card-body">
+        <h1 class="card-title text-center">{{ location?.name }}</h1>
+        <p class="card-text text-center text-muted">
+          <strong>Type:</strong> {{ location?.type || 'Unknown' }}<br />
+          <strong>Dimension:</strong> {{ location?.dimension || 'Unknown' }}
+        </p>
+      </div>
+      <div class="card-footer">
+        <h5 class="text-center">Residents</h5>
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let resident of location?.residents">
+            <a [href]="resident" target="_blank">{{ resident }}</a>
+            <div class="pl-3">
+                <button class="btn btn-success" (click)="getDetallePersonaje(resident)" >Ver</button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  

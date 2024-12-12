@@ -1,0 +1,31 @@
+
+  <div class="bg-light  min-vh-100 py-4" *ngIf="cargando">
+    <button>Previous</button>
+    <button>Next</button>
+    <div class="container">
+      <div class="row row-cols-1 row-cols-md-4 g-4">
+        <div class="col" *ngFor="let personaje of personajes">
+          <div class="card h-100 text-center shadow-lg">
+            <img
+              alt="{{ personaje.name }}"
+              [src]="personaje.image"
+              class="card-img-top"
+            />
+            <div class="card-body">
+              <h5 class="card-title">{{ personaje.name }}</h5>
+              <button class="btn btn-primary" (click)="getDetalle(personaje.url)">Detalle</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <ng-container *ngIf="!cargando">
+    <h1>Cargando...</h1>
+  </ng-container>
+
+
+  
+  

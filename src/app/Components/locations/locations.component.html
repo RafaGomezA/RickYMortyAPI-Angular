@@ -1,0 +1,16 @@
+<div class="bg-light  min-vh-100 py-4">
+    <button>Previous</button>
+    <button>Next</button>
+    <div class="container">
+      <div class="row row-cols-1 row-cols-md-4 g-4">
+        <div class="col" *ngFor="let location of locations">
+          <div class="card h-100 text-center shadow-lg">
+            <div class="card-body">
+              <h5 class="card-title">{{ location.name }}</h5>
+              <button class="btn btn-primary" (click)="getDetailLocation(location.url)">Detalle</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
