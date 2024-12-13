@@ -83,7 +83,7 @@ export class HomeComponent implements OnInit {
     // this.paginaActual = selectedPage; // Actualizamos la página actual
     // this.getAll(url); // Carga los datos de la página seleccionada
   
-    const selectedPage = event.target.value; // Obtén la página seleccionada
+    const selectedPage = event.target.value; // Obtén la página seleccionada (1,2,3,4...)
 
     let url = '';
     if (this.filtroNombre) {
