@@ -21,7 +21,7 @@ export class RestService {
   //   return this.httpClient.get<IPersonajes>(this.urlCharacter);
   // }
 
-  /////////// peticiones personajes con paginación pasando la url de prev y next///////////
+  /////////// peticiones personajes y también con paginación pasando la url de prev y next///////////
   public getAll(url :string) :Observable <IPersonajes>{
     return this.httpClient.get<IPersonajes>(url);
   }
