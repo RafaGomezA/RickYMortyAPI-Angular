@@ -17,8 +17,13 @@ export class RestService {
   constructor(private httpClient: HttpClient) { }
 
   /////////// peticiones personajes /////////// 
-  public getAll() :Observable <IPersonajes>{
-    return this.httpClient.get<IPersonajes>(this.urlCharacter);
+  // public getAll() :Observable <IPersonajes>{
+  //   return this.httpClient.get<IPersonajes>(this.urlCharacter);
+  // }
+
+  /////////// peticiones personajes con paginación pasando la url de prev y next///////////
+  public getAll(url :string) :Observable <IPersonajes>{
+    return this.httpClient.get<IPersonajes>(url);
   }
 
   public getDetail(url :string):Observable <IDetail>{

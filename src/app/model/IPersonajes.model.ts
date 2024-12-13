@@ -1,3 +1,10 @@
+/*
+En la web de Rick y Morty cojo los json y los pego en la web quicktype para sacar esta información 
+
+en este caso es el json de https://rickandmortyapi.com/api/character
+*/
+
+
 export interface IPersonajes {
     info:    Info;
     results: Result[];

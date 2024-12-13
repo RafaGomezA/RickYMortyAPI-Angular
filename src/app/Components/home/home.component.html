@@ -1,8 +1,15 @@
 
-  <div class="bg-light  min-vh-100 py-4" *ngIf="cargando">
-    <button>Previous</button>
-    <button>Next</button>
-    <div class="container">
+  <div class="bg-light  min-vh-100 py-4" >
+
+    <div class="container d-flex flex-row justify-content-center align-items-center p-4">
+      <button class="btn btn-dark m-2" (click)="cambiarPagina('prev')"[disabled]="!prev"> Anterior </button>
+      <select name="pageselect" id="pageselect" class="m-2 form-select w-auto" [(ngModel)]="currentPage" (change)="cargarPagina($event)">
+        <option *ngFor="let page of pagesArray" [value]="page">{{ page }}</option>
+      </select>
+      <button class="btn btn-dark m-2"(click)="cambiarPagina('next')" [disabled]="!next">Siguiente</button>
+    </div>
+
+    <div class="container" *ngIf="cargando">
       <div class="row row-cols-1 row-cols-md-4 g-4">
         <div class="col" *ngFor="let personaje of personajes">
           <div class="card h-100 text-center shadow-lg">
@@ -22,9 +29,7 @@
   </div>
   
 
-  <ng-container *ngIf="!cargando">
-    <h1>Cargando...</h1>
-  </ng-container>
+
 
 
   
