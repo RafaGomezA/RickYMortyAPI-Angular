@@ -14,8 +14,17 @@
       <li class="nav-item">
         <a class="nav-link" routerLink="/location">localizaciones</a>
       </li>
+
+      <!-- buscador -->
+      <li>
+        <input
+        type="text"
+        class="form-control w-150"
+        placeholder="Buscar Personaje"
+        [(ngModel)]="nombrePersonaje"
+        (keyup.enter)="buscarPersonaje()"/>
+      </li>
     </ul>
   </nav>
   
 
-  

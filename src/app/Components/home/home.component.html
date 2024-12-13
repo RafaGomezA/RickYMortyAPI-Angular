@@ -3,7 +3,7 @@
 
     <div class="container d-flex flex-row justify-content-center align-items-center p-4">
       <button class="btn btn-dark m-2" (click)="cambiarPagina('prev')"[disabled]="!prev"> Anterior </button>
-      <select name="pageselect" id="pageselect" class="m-2 form-select w-auto" [(ngModel)]="currentPage" (change)="cargarPagina($event)">
+      <select name="pageselect" id="pageselect" class="m-2 form-select w-auto" [(ngModel)]="paginaActual" (change)="cargarPagina($event)">
         <option *ngFor="let page of pagesArray" [value]="page">{{ page }}</option>
       </select>
       <button class="btn btn-dark m-2"(click)="cambiarPagina('next')" [disabled]="!next">Siguiente</button>
@@ -13,11 +13,7 @@
       <div class="row row-cols-1 row-cols-md-4 g-4">
         <div class="col" *ngFor="let personaje of personajes">
           <div class="card h-100 text-center shadow-lg">
-            <img
-              alt="{{ personaje.name }}"
-              [src]="personaje.image"
-              class="card-img-top"
-            />
+            <img alt="{{ personaje.name }}" [src]="personaje.image" class="card-img-top" />
             <div class="card-body">
               <h5 class="card-title">{{ personaje.name }}</h5>
               <button class="btn btn-primary" (click)="getDetalle(personaje.url)">Detalle</button>

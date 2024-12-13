@@ -38,4 +38,6 @@ export class RestService {
   public getDetailLocation(url:string): Observable <IDetailLocation>{
     return this.httpClient.get<IDetailLocation>(url);
   }
+
+
 }
